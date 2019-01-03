@@ -304,6 +304,7 @@ class DbfLogicalFieldDef(DbfFieldDef):
     def decodeValue(self, value):
         """Return True, False or -1 decoded from ``value``."""
         # Note: value always is 1-char string
+        value = value.decode(locale.getpreferredencoding)
         if value == "?":
             return -1
         if value in "NnFf ":
