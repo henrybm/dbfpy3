@@ -74,7 +74,7 @@ class DbfRecord(object):
         self.dbf = dbf
         # XXX: I'm not sure ``index`` is necessary
         self.index = index
-        self.deleted = deleted
+        # self.deleted = deleted # FIXME temporary modification to read deleted records too
         if data is None:
             self.fieldData = [_fd.defaultValue for _fd in dbf.header.fields]
         else:
